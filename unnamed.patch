@@ -1,0 +1,43 @@
+Index: app/src/main/java/jp/techacademy/takuto/kotlinlog/Human.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/jp/techacademy/takuto/kotlinlog/Human.kt	(revision d86f71b6657e107b280f95c0730abff2a25e0da1)
++++ app/src/main/java/jp/techacademy/takuto/kotlinlog/Human.kt	(date 1603102374084)
+@@ -3,8 +3,12 @@
+ import android.util.Log
+ 
+ open class Human: Animal ,Thinkable{
++    var hobby: String
+     // 引数付きコンストラクタ
+-    constructor(name: String, age: Int, hobby: String): super(name, age, hobby) {
++    constructor(name: String, age: Int, hobby: String):super(name, age){
++        this.name = name
++        this.age = age
++        this.hobby = hobby
+     }
+ 
+ 
+Index: app/src/main/java/jp/techacademy/takuto/kotlinlog/Animal.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/jp/techacademy/takuto/kotlinlog/Animal.kt	(revision d86f71b6657e107b280f95c0730abff2a25e0da1)
++++ app/src/main/java/jp/techacademy/takuto/kotlinlog/Animal.kt	(date 1603101377183)
+@@ -4,13 +4,11 @@
+     // プロパティ
+     var name: String
+     var age: Int
+-    var hobby: String
+ 
+     // 引数付きコンストラクタ
+-    constructor(name: String, age: Int, hobby: String) {
++    constructor(name: String, age: Int) {
+         this.name = name
+         this.age = age
+-        this.hobby = hobby
+     }
+ 
+     abstract fun say()
